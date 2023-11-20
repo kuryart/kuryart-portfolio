@@ -27,7 +27,10 @@
     // "noUnusedParameters": true,
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true
-    // "noImplicitReturns": true
+    // "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "ts-node": {
+      "esm": true, // «———— enabling ESM for ts-node   
+    },
   }
 }

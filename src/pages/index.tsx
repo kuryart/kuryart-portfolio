@@ -68,14 +68,12 @@ export const index = new Elysia().use(ctx).get("/", async ({ htmlStream }) => {
             <div class="hero-content flex-col lg:flex-row">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="200"
-                height="200"
                 fill="none"
                 viewBox="0 0 200 200"
                 version="1.1"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:svgjs="http://svgjs.dev/svgjs"
-                class="magictime vanishIn"
+                class="magictime vanishIn h-128 w-128"
               >
                 <path
                   fill="white"
@@ -85,9 +83,14 @@ export const index = new Elysia().use(ctx).get("/", async ({ htmlStream }) => {
 
               <div>
                 <h1 class="text-5xl font-bold">Sobre mim</h1>
-                <p class="py-6">
+                <p class="py-6 text-justify">
                   Sou um desenvolvedor fullstack com 11 anos de experiência em
-                  programação e 5 anos trabalhando na área.
+                  programação e 5 anos de carreira. Durante esses anos, tive a
+                  oportunidade de desenvolver projetos para Web, Desktop e
+                  Games, como landing pages, e-commerces, e sistemas ERP,
+                  utilizando diversas tecnologias como: Laravel, Node.js,
+                  Vue.js, MySQL, PostgreSQL, SQLServer, Docker, Git, Windows
+                  Forms, entre outros.
                 </p>
               </div>
             </div>

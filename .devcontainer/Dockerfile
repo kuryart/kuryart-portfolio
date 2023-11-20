@@ -16,4 +16,5 @@ RUN su node -c "umask 0002 && npm install -g ${NODE_MODULES}" \
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
 
 # [Optional] Uncomment if you want to install more global node packages
-# RUN su node -c "npm install -g <your-package-list -here>"
+# RUN su node -c "curl -fsSL https://bun.sh/install | bash"
+# RUN su node -c "bun install -g gulp"
