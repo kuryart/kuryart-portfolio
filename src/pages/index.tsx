@@ -1,105 +1,609 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/require-await */
+// import { Application, Assets, Sprite } from "pixi.js";
 import { Suspense } from "beth-stack/jsx";
 import { Elysia } from "elysia";
-// import { Application, Assets, Sprite } from "pixi.js";
 import { BaseHtml } from "../components/base";
+import { IconButton } from "../components/buttons/icon-button";
+import { ThemeController } from "../components/buttons/theme-controller";
 import { ctx } from "../context";
+// import { importIcons } from "../utils/import-icons";
 
-export const index = new Elysia().use(ctx).get("/", async ({ htmlStream }) => {
-  return htmlStream(() => (
-    <BaseHtml>
-      {/* Main Container */}
-      <div class="h-screen w-full px-8 pt-4">
-        {/* Header */}
-        <div id="header" class="flex h-max w-full flex-row justify-between">
-          {/* Left */}
-          <div class="magictime slideLeftReturn flex flex-row items-center">
-            <img
-              class="h-16 w-16"
-              src="public/dist/images/kurya.png"
-              alt="kurya"
-            />
-            <h1 class="text-4xl font-bold">
-              Paulo Cury
-              <span class="ml-6 text-2xl text-gray-600">
-                Software Developer
+// importIcons();
+
+export const index = new Elysia()
+  .use(ctx)
+  .get("/", async ({ htmlStream, set }) => {
+    return htmlStream(() => (
+      <BaseHtml>
+        {/* Main Container */}
+        <div class="h-screen w-full px-8 pt-4">
+          {/* Header */}
+          <div id="header" class="flex h-max w-full flex-row justify-between">
+            {/* Left */}
+            <div class="magictime slideLeftReturn flex flex-row flex-wrap items-center">
+              <img
+                class="h-16 w-16"
+                src="public/dist/images/kurya.png"
+                alt="kurya"
+              />
+              <h1 class="text-4xl font-bold">Paulo Cury</h1>
+              <h2 class="ml-6 text-2xl text-warning">Software Developer</h2>
+            </div>
+            {/* Right */}
+            <div class="magictime slideUpReturn my-auto flex flex-row ">
+              <IconButton
+                href="https://www.linkedin.com/in/paulo-cezar-cury-seara/"
+                fontSize="text-5xl"
+                iconSet="mdi"
+                icon="linkedin"
+                color="currentColor"
+                hoverColor="warning"
+              />
+              <span class="ml-2 mr-8">
+                <IconButton
+                  href="https://github.com/kuryart"
+                  fontSize="text-5xl"
+                  iconSet="mdi"
+                  icon="github"
+                  color="currentColor"
+                  hoverColor="warning"
+                />
               </span>
-            </h1>
-          </div>
-          {/* Right */}
-          <div class="flex flex-row">
-            <a href="https://www.linkedin.com/in/paulo-cezar-cury-seara/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="3em"
-                height="3em"
-                viewBox="0 0 24 24"
-                class="magictime slideRightReturn mr-4"
-              >
-                <path
-                  fill="currentColor"
-                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"
-                />
-              </svg>
-            </a>
 
-            <a href="https://github.com/kuryart">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="3em"
-                height="3em"
-                viewBox="0 0 24 24"
-                class="magictime slideRightReturn mr-4"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        {/* Content */}
-
-        <div class="grid grid-cols-2">
-          <div class="hero h-64">
-            <div class="hero-content flex-col lg:flex-row">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 200 200"
-                version="1.1"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:svgjs="http://svgjs.dev/svgjs"
-                class="magictime vanishIn h-128 w-128"
-              >
-                <path
-                  fill="white"
-                  d="M165.963 134.037c-5.467 5.467-14.332 5.467-19.799 0l-24.137-24.138c-5.468-5.467-5.468-14.331 0-19.799l24.137-24.137c5.467-5.467 14.332-5.467 19.799 0L190.101 90.1c5.467 5.468 5.467 14.332 0 19.799l-24.138 24.138Zm-112.127 0c-5.467 5.467-14.332 5.467-19.8 0L9.9 109.899c-5.468-5.467-5.468-14.331 0-19.799l24.137-24.137c5.467-5.467 14.332-5.467 19.799 0L77.973 90.1c5.468 5.468 5.468 14.332 0 19.799l-24.137 24.138ZM109.9 190.1c-5.468 5.468-14.332 5.468-19.8 0l-24.137-24.137c-5.467-5.467-5.467-14.332 0-19.799l24.138-24.137c5.467-5.468 14.331-5.468 19.799 0l24.137 24.137c5.467 5.467 5.467 14.332 0 19.799L109.9 190.1Zm0-112.127c-5.468 5.468-14.332 5.468-19.8 0L65.963 53.836c-5.467-5.468-5.467-14.332 0-19.8L90.101 9.9c5.467-5.467 14.331-5.467 19.799 0l24.137 24.138c5.467 5.467 5.467 14.331 0 19.799L109.9 77.973Z"
-                ></path>
-              </svg>
-
-              <div>
-                <h1 class="text-5xl font-bold">Sobre mim</h1>
-                <p class="py-6 text-justify">
-                  Sou um desenvolvedor fullstack com 11 anos de experiência em
-                  programação e 5 anos de carreira. Durante esses anos, tive a
-                  oportunidade de desenvolver projetos para Web, Desktop e
-                  Games, como landing pages, e-commerces, e sistemas ERP,
-                  utilizando diversas tecnologias como: Laravel, Node.js,
-                  Vue.js, MySQL, PostgreSQL, SQLServer, Docker, Git, Windows
-                  Forms, entre outros.
-                </p>
-              </div>
+              <ThemeController
+                theme="cupcake"
+                lightIconSet="ph"
+                lightIcon="sun-bold"
+                darkIconSet="ph"
+                darkIcon="moon-bold"
+                fontSize="text-2xl"
+                color="currentColor"
+                hoverColor="warning"
+              />
             </div>
           </div>
-        </div>
 
-        {/* Footer */}
-        {/* <div class="h-8 w-full"></div> */}
-      </div>
-    </BaseHtml>
-  ));
-});
+          {/* Content */}
+          {/* Grid */}
+          <div class="ml-8 mt-12 grid grid-flow-row auto-rows-[minmax(min-content,_max-content)] grid-cols-1 gap-8 lg:grid-cols-[repeat(2,_1fr)]">
+            {/* Col1 */}
+            {/* Sobre Mim */}
+            <div class="lg:col-start-1 lg:col-end-1 lg:row-start-1 lg:row-end-1 flex flex-col gap-4">
+              <h1 class="text-5xl font-bold">Sobre mim</h1>
+              <p class="py-6 pr-12 text-justify indent-8">
+                Sou um desenvolvedor fullstack com 11 anos de experiência em
+                programação e 5 anos de carreira. Durante esses anos, tive a
+                oportunidade de desenvolver projetos para Web, Desktop e Games,
+                como landing pages, e-commerces, e sistemas ERP, utilizando
+                diversas tecnologias como: Laravel, Node.js, Vue.js, MySQL,
+                PostgreSQL, SQLServer, Docker, Git, Windows Forms, entre outros.
+              </p>
+              {/* <blockquote class="prose">
+                Qualquer tolo pode escrever código que um computador pode
+                entender. Bons programadores escrevem código que os humanos
+                podem entender.
+              </blockquote> */}
+            </div>
+
+            {/* Col2 */}
+            {/* Trajetória */}
+            <div class="lg:col-start-2 lg:col-end-2 lg:row-start-1 lg:row-end-6 flex flex-col gap-4">
+              <h1 class="text-5xl font-bold">Minha trajetória</h1>
+
+              {/* Timeline */}
+              <ul class="timeline timeline-vertical mt-6 pl-8 pr-12 xl:pr-24">
+                <li>
+                  <div class="timeline-start mr-4 font-bold">1999</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    Aos 8 anos começo a ter contato com computação através de
+                    cursos e com programação através do RPG Maker, do HTML e de
+                    macros e fórmulas do Excel.
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2006</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    Concluo um pequeno jogo em RPG Maker, já compreendendo
+                    conceitos fundamentais como variáveis, condicionais,
+                    repetição e loops. Inicio meus estudos em Linux.
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2011</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    Utilizando uma planilha de Excel, desenvolvi um "aplicativo"
+                    de Poker. O objetivo era resolver um problema: queria jogar
+                    Poker com meus primos e não tínhamos fichas. O processo de
+                    desenvolvimento durou uma madrugada.
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2012</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    Já apaixonado pelo código, começo meus estudos em Ruby
+                    através da Code Academy.
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2014</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    Inicio meus estudos em C# e Unity, tendo desenvolvido alguns
+                    jogos simples.
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2018</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    <ul class="mt-4">
+                      <li class="mb-2">
+                        <ul class="flex justify-between">
+                          <li class="text-lg font-bold leading-4	">Dataplace</li>
+                          <li class="text-xs italic leading-4	">Garça, SP</li>
+                        </ul>
+                      </li>
+
+                      <li class="mb-4 text-xs italic	leading-4">
+                        Desenvolvedor Desktop
+                      </li>
+
+                      <li>
+                        <ul>
+                          <li class="mb-1">
+                            ● Desenvolver e prestar manutenção a módulos
+                            personalizados em .NET (C# e VB);
+                          </li>
+                          <li class="mb-1">
+                            ● Desenvolver e prestar manutenção a scripts
+                            VBScript e relatórios personalizados;
+                          </li>
+                          <li class="mb-1">
+                            ● Estabelecer contato com o cliente para elaboração
+                            de escopo de projeto e homologação;
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2019</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    <ul class="mt-4">
+                      <li class="mb-2">
+                        <ul class="flex justify-between">
+                          <li class="text-lg font-bold leading-4	">Autônomo</li>
+                          <li class="text-xs italic leading-4	">Garça, SP</li>
+                        </ul>
+                      </li>
+
+                      <li class="mb-4 text-xs italic	leading-4">
+                        Desenvolvedor Web
+                      </li>
+
+                      <li>
+                        <ul>
+                          <li class="mb-1">
+                            ● Desenvolver e prestar manutenção a sites e
+                            softwares web em Laravel e WordPress;
+                          </li>
+                          <li class="mb-1">
+                            ● Gerenciar servidores em plataformas diversas
+                            (LAMP, PHPMyAdmin, Hostgator, etc.);
+                          </li>
+                          <li class="mb-1">
+                            ● Estabelecer contato com o cliente para elaboração
+                            de escopo de projeto e homologação;
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2021</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    <ul class="mt-4">
+                      <li class="mb-2">
+                        <ul class="flex justify-between">
+                          <li class="text-lg font-bold leading-4	">
+                            BM Soluções Tecnológicas
+                          </li>
+                          <li class="text-xs italic leading-4	">Marília, SP</li>
+                        </ul>
+                      </li>
+
+                      <li class="mb-4 text-xs italic	leading-4">
+                        Desenvolvedor Web
+                      </li>
+
+                      <li>
+                        <ul>
+                          <li class="mb-1">
+                            ● Desenvolver novas features e prestar manutenção a
+                            aplicação ERP desenvolvida em PHP, JS, HTML e CSS;
+                          </li>
+                          <li class="mb-1">
+                            ● Desenvolver novas features e prestar manutenção a
+                            aplicação monolítica ERP desenvolvida em Laravel;
+                          </li>
+                          <li class="mb-1">
+                            ● Treinar equipe de estagiários e juniores.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2022</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    <ul class="mt-4">
+                      <li class="mb-2">
+                        <ul class="flex justify-between">
+                          <li class="text-lg font-bold leading-4	">XP Inc.</li>
+                          <li class="text-xs italic leading-4	">Remoto</li>
+                        </ul>
+                      </li>
+
+                      <li class="mb-4 text-xs italic	leading-4">
+                        Desenvolvedor Web
+                      </li>
+
+                      <li>
+                        <ul>
+                          <li class="mb-1">
+                            ● Desenvolver novas features e prestar manutenção a
+                            aplicação monolítica de eventos online desenvolvida
+                            em Laravel;
+                          </li>
+                          <li class="mb-1">
+                            ● Responsável por desenvolver novas features e
+                            prestar manutenção a aplicação de coleta e
+                            tratamento de dados sobre o mercado financeiro
+                            desenvolvida em Node.js (Azure Functions).
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <hr class="bg-warning" />
+                </li>
+
+                <li>
+                  <hr class="bg-warning" />
+                  <div class="timeline-start mr-4 font-bold">2022</div>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end timeline-box ml-4 p-4 hover:bg-base-200">
+                    <ul class="mt-4">
+                      <li class="mb-2">
+                        <ul class="flex justify-between">
+                          <li class="text-lg font-bold leading-4	">ACIM</li>
+                          <li class="text-xs italic leading-4	">Marínia, SP</li>
+                        </ul>
+                      </li>
+
+                      <li class="mb-4 text-xs italic	leading-4">Tech Lead</li>
+
+                      <li>
+                        <ul>
+                          <li class="mb-1">
+                            ● Planejar, desenvolver, testar e implementar
+                            aplicação ERP desenvolvida em Laravel (backend) e
+                            Vue.js (frontend);
+                          </li>
+                          <li class="mb-1">
+                            ● Treinar equipe de estagiários e juniores.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                {/* aaaa */}
+              </ul>
+            </div>
+
+            {/* Col3 */}
+            {/* Stacks */}
+            <div class="lg:col-start-1 lg:col-end-1 lg:row-start-2 lg:row-end-2 flex flex-col gap-4">
+              <h1 class="text-5xl font-bold">Stacks</h1>
+
+              <div class="mt-6 grid grid-cols-4 justify-items-center gap-y-10 pr-8 xl:grid-cols-5">
+                <div class="flex flex-col gap-2">
+                  <span class="custom-icons custom-icons-elysia mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Elysia</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="custom-icons custom-icons-htmx mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">HTMX</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--logos icon--logos--bun mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Bun</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--logos icon--logos--ruby mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Ruby</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--logos icon--logos--unity mx-auto rounded-lg bg-zinc-50 text-5xl" />
+                  <span class="text-center text-sm font-bold">Unity</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--php-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">PHP</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--javascript mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Javascript</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--typescript mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Typescript</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--nodejs-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Node</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--html mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">HTML</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--css mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">CSS</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--react-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">React</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--vuejs-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Vue</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--laravel-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Laravel</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--mysql-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">MySQL</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--godot-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Godot</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--linux-light mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Linux</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--docker mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Docker</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--simple-icons icon--simple-icons--turso mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Turso</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--teenyicons icon--teenyicons--c-sharp-solid mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">C#</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--fa icon--fa--windows mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Windows</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--devicon icon--devicon--git mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Git</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--file-icons icon--file-icons--test-generic mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Testing</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Col4 */}
+            {/* Projetos */}
+            <div class="lg:col-start-1 lg:col-end-1 lg:row-start-3 lg:row-end-6 flex flex-col gap-4">
+              <h1 class="text-5xl font-bold">Projetos</h1>
+              <p class="py-6 pr-12 text-justify indent-8">
+                Sou um desenvolvedor fullstack com 11 anos de experiência em
+                programação e 5 anos de carreira. Durante esses anos, tive a
+                oportunidade de desenvolver projetos para Web, Desktop e Games,
+                como landing pages, e-commerces, e sistemas ERP, utilizando
+                diversas tecnologias como: Laravel, Node.js, Vue.js, MySQL,
+                PostgreSQL, SQLServer, Docker, Git, Windows Forms, entre outros.
+              </p>
+            </div>
+          </div>
+
+          {/* Footer */}
+          {/* <div class="h-8 w-full"></div> */}
+        </div>
+      </BaseHtml>
+    ));
+  });
