@@ -5,15 +5,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const gulp = require("gulp");
+const { watch } = require("gulp");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const tailwind = require("tailwindcss");
 const postcssImport = require("postcss-import");
 const rename = require("gulp-rename");
 const cleanCSS = require("gulp-clean-css");
-// const uglify = require("gulp-uglify");
 
-gulp.task("css", function () {
+function css() {
   var plugins = [
     postcssImport(),
     tailwind("./tailwind.config.js"),
@@ -25,12 +25,11 @@ gulp.task("css", function () {
     .pipe(cleanCSS())
     .pipe(rename("style.css"))
     .pipe(gulp.dest("./public/dist/"));
-});
+}
 
-// gulp.task("js", function () {
-//   return gulp
-//     .src("./src/js/*.js")
-//     .pipe(uglify())
-//     .pipe(rename({ extname: ".min.js" }))
-//     .pipe(gulp.dest("./public/dist/"));
-// })
+exports.build = function () {
+  return css();
+};
+exports.dev = function () {
+  watch(["src/**/*.css", "src/**/*.ts", "src/**/*.tsx"], css);
+};
