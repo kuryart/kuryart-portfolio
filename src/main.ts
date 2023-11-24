@@ -8,7 +8,7 @@ import { pages } from "./pages/*";
 
 const app = new Elysia()
   // .use(swagger())
-  // @ts-expect-error
+  // @ts-expect-error (beth-stack)
   .use(staticPlugin())
   .use(api)
   .use(pages)
