@@ -6,3 +6,4 @@
 :where(.timeline>li) {
     grid-template-columns: var(--timeline-col-start,minmax(0,0.1fr)) auto var(--timeline-col-end,minmax(0,1fr));
 }
+

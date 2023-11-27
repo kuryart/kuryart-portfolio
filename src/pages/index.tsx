@@ -16,17 +16,17 @@ export const index = new Elysia()
     return htmlStream(() => (
       <BaseHtml>
         {/* Main Container */}
-        <div class="h-screen w-full px-8 pt-4">
+        <div class="h-screen w-full px-2 pt-2 sm:px-8 sm:pt-4">
           {/* Header */}
           <div id="header" class="flex h-max w-full flex-row justify-between">
             {/* Left */}
             <div class="magictime slideLeftReturn flex flex-row flex-wrap items-center">
               <img
-                class="h-16 w-16"
+                class="h-8 h-8 sm:h-16 sm:w-16"
                 src="public/dist/images/kurya.png"
                 alt="kurya"
               />
-              <h1 class="text-4xl font-bold">Paulo Cury</h1>
+              <h1 class="text-2xl sm:text-4xl font-bold">Paulo Cury</h1>
               <h2 class="ml-6 text-2xl text-warning">Software Developer</h2>
             </div>
             {/* Right */}
@@ -64,12 +64,12 @@ export const index = new Elysia()
 
           {/* Content */}
           {/* Grid */}
-          <div class="ml-8 mt-12 grid grid-flow-row auto-rows-[minmax(min-content,_max-content)] grid-cols-1 gap-8 lg:grid-cols-[repeat(2,_1fr)]">
+          <div class="magictime slideDownReturn ml-8 mt-12 grid grid-flow-row auto-rows-[minmax(min-content,_max-content)] grid-cols-1 gap-8 lg:grid-cols-[repeat(2,_1fr)]">
             {/* Col1 */}
             {/* Sobre Mim */}
-            <div class="lg:col-start-1 lg:col-end-1 lg:row-start-1 lg:row-end-1 flex flex-col gap-4">
+            <div class="flex flex-col gap-4 pr-12 lg:col-start-1 lg:col-end-1 lg:row-start-1 lg:row-end-1">
               <h1 class="text-5xl font-bold">Sobre mim</h1>
-              <p class="py-6 pr-12 text-justify indent-8">
+              <p class="py-6 text-justify indent-8">
                 Sou um desenvolvedor fullstack com 11 anos de experiência em
                 programação e 5 anos de carreira. Durante esses anos, tive a
                 oportunidade de desenvolver projetos para Web, Desktop e Games,
@@ -77,16 +77,17 @@ export const index = new Elysia()
                 diversas tecnologias como: Laravel, Node.js, Vue.js, MySQL,
                 PostgreSQL, SQLServer, Docker, Git, Windows Forms, entre outros.
               </p>
-              {/* <blockquote class="prose">
-                Qualquer tolo pode escrever código que um computador pode
+              <p class="px-[12%] text-center text-sm italic">
+                "Qualquer tolo pode escrever código que um computador pode
                 entender. Bons programadores escrevem código que os humanos
-                podem entender.
-              </blockquote> */}
+                podem entender."
+              </p>
+              <p class="text-right text-sm font-bold"> - Martin Fowler</p>
             </div>
 
             {/* Col2 */}
             {/* Trajetória */}
-            <div class="lg:col-start-2 lg:col-end-2 lg:row-start-1 lg:row-end-6 flex flex-col gap-4">
+            <div class="flex flex-col gap-4 lg:col-start-2 lg:col-end-2 lg:row-start-1 lg:row-end-4">
               <h1 class="text-5xl font-bold">Minha trajetória</h1>
 
               {/* Timeline */}
@@ -230,12 +231,12 @@ export const index = new Elysia()
                     <ul class="mt-4">
                       <li class="mb-2">
                         <ul class="flex justify-between">
-                          <li class="text-lg font-bold leading-4	">Dataplace</li>
-                          <li class="text-xs italic leading-4	">Garça, SP</li>
+                          <li class="text-lg font-bold leading-6	">Dataplace</li>
+                          <li class="text-xs italic leading-6	">Garça, SP</li>
                         </ul>
                       </li>
 
-                      <li class="mb-4 text-xs italic	leading-4">
+                      <li class="mb-4 text-xs italic	leading-6">
                         Desenvolvedor Desktop
                       </li>
 
@@ -281,12 +282,12 @@ export const index = new Elysia()
                     <ul class="mt-4">
                       <li class="mb-2">
                         <ul class="flex justify-between">
-                          <li class="text-lg font-bold leading-4	">Autônomo</li>
-                          <li class="text-xs italic leading-4	">Garça, SP</li>
+                          <li class="text-lg font-bold leading-6	">Autônomo</li>
+                          <li class="text-xs italic leading-6	">Garça, SP</li>
                         </ul>
                       </li>
 
-                      <li class="mb-4 text-xs italic	leading-4">
+                      <li class="mb-4 text-xs italic	leading-6">
                         Desenvolvedor Web
                       </li>
 
@@ -332,14 +333,14 @@ export const index = new Elysia()
                     <ul class="mt-4">
                       <li class="mb-2">
                         <ul class="flex justify-between">
-                          <li class="text-lg font-bold leading-4	">
+                          <li class="text-lg font-bold leading-6">
                             BM Soluções Tecnológicas
                           </li>
-                          <li class="text-xs italic leading-4	">Marília, SP</li>
+                          <li class="text-xs italic leading-6	">Marília, SP</li>
                         </ul>
                       </li>
 
-                      <li class="mb-4 text-xs italic	leading-4">
+                      <li class="mb-4 text-xs italic	leading-6">
                         Desenvolvedor Web
                       </li>
 
@@ -384,12 +385,12 @@ export const index = new Elysia()
                     <ul class="mt-4">
                       <li class="mb-2">
                         <ul class="flex justify-between">
-                          <li class="text-lg font-bold leading-4	">XP Inc.</li>
-                          <li class="text-xs italic leading-4	">Remoto</li>
+                          <li class="text-lg font-bold leading-6	">XP Inc.</li>
+                          <li class="text-xs italic leading-6	">Remoto</li>
                         </ul>
                       </li>
 
-                      <li class="mb-4 text-xs italic	leading-4">
+                      <li class="mb-4 text-xs italic	leading-6">
                         Desenvolvedor Web
                       </li>
 
@@ -434,12 +435,12 @@ export const index = new Elysia()
                     <ul class="mt-4">
                       <li class="mb-2">
                         <ul class="flex justify-between">
-                          <li class="text-lg font-bold leading-4	">ACIM</li>
-                          <li class="text-xs italic leading-4	">Marínia, SP</li>
+                          <li class="text-lg font-bold leading-6	">ACIM</li>
+                          <li class="text-xs italic leading-6	">Marília, SP</li>
                         </ul>
                       </li>
 
-                      <li class="mb-4 text-xs italic	leading-4">Tech Lead</li>
+                      <li class="mb-4 text-xs italic	leading-6">Tech Lead</li>
 
                       <li>
                         <ul>
@@ -463,40 +464,10 @@ export const index = new Elysia()
 
             {/* Col3 */}
             {/* Stacks */}
-            <div class="lg:col-start-1 lg:col-end-1 lg:row-start-2 lg:row-end-2 flex flex-col gap-4">
-              <h1 class="text-5xl font-bold">Stacks</h1>
+            <div class="flex flex-col gap-4 lg:col-start-1 lg:col-end-1 lg:row-start-2 lg:row-end-2">
+              <h1 class="mb-8 text-5xl font-bold">Stacks</h1>
 
-              <div class="mt-6 grid grid-cols-4 justify-items-center gap-y-10 pr-8 xl:grid-cols-5">
-                <div class="flex flex-col gap-2">
-                  <span class="custom-icons custom-icons-elysia mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Elysia</span>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <span class="custom-icons custom-icons-htmx mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">HTMX</span>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <span class="icon--logos icon--logos--bun mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Bun</span>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <span class="icon--logos icon--logos--ruby mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Ruby</span>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <span class="icon--logos icon--logos--unity mx-auto rounded-lg bg-zinc-50 text-5xl" />
-                  <span class="text-center text-sm font-bold">Unity</span>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <span class="icon--skill-icons icon--skill-icons--php-dark mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">PHP</span>
-                </div>
-
+              <div class="mt-6 grid grid-cols-4 justify-items-center gap-y-10 pb-12 pr-8 xl:grid-cols-5">
                 <div class="flex flex-col gap-2">
                   <span class="icon--skill-icons icon--skill-icons--javascript mx-auto text-5xl" />
                   <span class="text-center text-sm font-bold">Javascript</span>
@@ -508,8 +479,18 @@ export const index = new Elysia()
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <span class="icon--skill-icons icon--skill-icons--nodejs-dark mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Node</span>
+                  <span class="icon--skill-icons icon--skill-icons--php-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">PHP</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--teenyicons icon--teenyicons--c-sharp-solid mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">C#</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--logos icon--logos--ruby mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Ruby</span>
                 </div>
 
                 <div class="flex flex-col gap-2">
@@ -523,6 +504,16 @@ export const index = new Elysia()
                 </div>
 
                 <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--laravel-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Laravel</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--nodejs-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Node</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
                   <span class="icon--skill-icons icon--skill-icons--react-dark mx-auto text-5xl" />
                   <span class="text-center text-sm font-bold">React</span>
                 </div>
@@ -533,8 +524,18 @@ export const index = new Elysia()
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <span class="icon--skill-icons icon--skill-icons--laravel-dark mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Laravel</span>
+                  <span class="icon--logos icon--logos--bun mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Bun</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="custom-icons custom-icons-elysia mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Elysia</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="custom-icons custom-icons-htmx mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">HTMX</span>
                 </div>
 
                 <div class="flex flex-col gap-2">
@@ -543,13 +544,8 @@ export const index = new Elysia()
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <span class="icon--skill-icons icon--skill-icons--godot-dark mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Godot</span>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <span class="icon--skill-icons icon--skill-icons--linux-light mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Linux</span>
+                  <span class="icon--simple-icons icon--simple-icons--turso mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Turso</span>
                 </div>
 
                 <div class="flex flex-col gap-2">
@@ -558,13 +554,13 @@ export const index = new Elysia()
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <span class="icon--simple-icons icon--simple-icons--turso mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Turso</span>
+                  <span class="icon--devicon icon--devicon--git mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Git</span>
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <span class="icon--teenyicons icon--teenyicons--c-sharp-solid mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">C#</span>
+                  <span class="icon--skill-icons icon--skill-icons--linux-light mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Linux</span>
                 </div>
 
                 <div class="flex flex-col gap-2">
@@ -573,8 +569,13 @@ export const index = new Elysia()
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <span class="icon--devicon icon--devicon--git mx-auto text-5xl" />
-                  <span class="text-center text-sm font-bold">Git</span>
+                  <span class="icon--logos icon--logos--unity mx-auto rounded-lg bg-zinc-50 text-5xl" />
+                  <span class="text-center text-sm font-bold">Unity</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <span class="icon--skill-icons icon--skill-icons--godot-dark mx-auto text-5xl" />
+                  <span class="text-center text-sm font-bold">Godot</span>
                 </div>
 
                 <div class="flex flex-col gap-2">
@@ -586,21 +587,307 @@ export const index = new Elysia()
 
             {/* Col4 */}
             {/* Projetos */}
-            <div class="lg:col-start-1 lg:col-end-1 lg:row-start-3 lg:row-end-6 flex flex-col gap-4">
-              <h1 class="text-5xl font-bold">Projetos</h1>
-              <p class="py-6 pr-12 text-justify indent-8">
-                Sou um desenvolvedor fullstack com 11 anos de experiência em
-                programação e 5 anos de carreira. Durante esses anos, tive a
-                oportunidade de desenvolver projetos para Web, Desktop e Games,
-                como landing pages, e-commerces, e sistemas ERP, utilizando
-                diversas tecnologias como: Laravel, Node.js, Vue.js, MySQL,
-                PostgreSQL, SQLServer, Docker, Git, Windows Forms, entre outros.
-              </p>
+            <div class="flex flex-col gap-4 lg:col-start-1 lg:col-end-1 lg:row-start-3 lg:row-end-3">
+              <h1 class="mb-8 text-5xl font-bold">Projetos</h1>
+              <ul class="pr-12">
+                <li class="mb-8 flex flex-col gap-2">
+                  <a
+                    class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                    href="https://github.com/kuryart/portfolio"
+                  >
+                    Portfolio
+                  </a>
+                  <span>
+                    Repositório utilizado para o desenvolvimento desse site.
+                    Feito com Bun, Typescript, HTMX e Tailwind, utilizando
+                    síntaxe JSX do React, com base na{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/portfolio"
+                    >
+                      BETH Stack
+                    </a>{" "}
+                    de{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/portfolio"
+                    >
+                      Ethan Niser
+                    </a>
+                    {"."}
+                  </span>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row gap-2">
+                    <a
+                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/rust-nails-ryst"
+                    >
+                      RYST on Nails
+                    </a>
+
+                    <div class="badge badge-warning gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="inline-block h-4 w-4 stroke-current"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                      Work in Progress...
+                    </div>
+                  </div>
+                  <div>
+                    Um template para o desenvolvimento, teste e deploy de
+                    sistemas em Rust, Yew, Tauri e SurrealDB, com base na stack
+                    proposta{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://www.youtube.com/watch?v=luOgEhLE2sg&t=4s"
+                    >
+                      neste vídeo
+                    </a>{" "}
+                    do canal{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://www.youtube.com/@letsgetrusty"
+                    >
+                      Let's Get Rusty
+                    </a>
+                    {", e na stack proposta no site do "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://rust-on-nails.com/"
+                    >
+                      Rust on Nails
+                    </a>
+                    {"."}
+                  </div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row gap-2">
+                    <a
+                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/godot-inventory-system"
+                    >
+                      Godot Inventory System
+                    </a>
+
+                    <div class="badge badge-warning gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="inline-block h-4 w-4 stroke-current"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                      Work in Progress...
+                    </div>
+                  </div>
+                  <div>
+                    Um sistema de inventário para games feito em GDScript do
+                    Godot, inspirado no sistema de inventário utilizado em
+                    Dungeon Crawlers.
+                  </div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row justify-between">
+                    <a
+                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/music-tools"
+                    >
+                      Music Tools
+                    </a>
+                  </div>
+                  <div>
+                    Algumas ferramentas para auxiliar no processo de composição
+                    musical utilizando técnicas de politonalismo, utilizadas por
+                    Stravinsky.
+                  </div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <a
+                    class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                    href="https://github.com/kuryart/usp-scrapper"
+                  >
+                    USP Scrapper
+                  </a>
+                  <span>
+                    Um web scrapper simples desenvolvido em Python para obter um
+                    resumo dos cursos de graduação da{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://www5.usp.br/"
+                    >
+                      USP - Universidade de São Paulo
+                    </a>
+                    {
+                      " (grade curricular, bibliografia, etc.). Utilizado para estudos autodidatas sobre Engenharia da Computação e Ciência da Computação."
+                    }
+                  </span>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row justify-between">
+                    <a
+                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/cardapio-digital"
+                    >
+                      Cardápio Digital
+                    </a>
+                  </div>
+                  <div>
+                    Sistema de Cardápio Digital web com leitor de QR Code para
+                    restaurantes, desenvolvido em Laravel e MySQL.
+                  </div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row justify-between">
+                    <a
+                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/flaviohmonteiro"
+                    >
+                      Portfolio de Candidato a Vereador 1
+                    </a>
+                  </div>
+                  <div>Site de campanha política para vereador.</div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row justify-between">
+                    <a
+                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://github.com/kuryart/JaInox"
+                    >
+                      Portfolio de Candidato a Vereador 2
+                    </a>
+                  </div>
+                  <div>Site de campanha política para vereador.</div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row gap-2">
+                    <h2 class="text-2xl font-bold">
+                      Sistema de Gestão de Importação
+                    </h2>
+
+                    <div class="badge badge-error gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="inline-block h-4 w-4 stroke-current"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                      Código Proprietário
+                    </div>
+                  </div>
+                  <div>
+                    Sistema desenvolvido em C# e Windows Forms para gestão
+                    contábil de produtos importados, desenvolvido como um Módulo
+                    Adicional do Dataplace Symphony para a multinacional{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://kadant.com/"
+                    >
+                      Kadant
+                    </a>
+                    {"."}
+                  </div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row gap-2">
+                    <h2 class="text-2xl font-bold">
+                      Sistema de Gestão de Centro de Custos
+                    </h2>
+
+                    <div class="badge badge-error gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="inline-block h-4 w-4 stroke-current"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                      Código Proprietário
+                    </div>
+                  </div>
+                  <div>
+                    Sistema desenvolvido em C# e Windows Forms para gestão
+                    contábil de produtos importados, desenvolvido como um Módulo
+                    Adicional do Dataplace Symphony para a instituição de ensino{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://www.univem.edu.br/"
+                    >
+                      UNIVEM
+                    </a>
+                    {"."}
+                  </div>
+                </li>
+                <li class="mb-8 flex flex-col gap-2">
+                  <div class="flex flex-row gap-2">
+                    <h2 class="text-2xl font-bold">Focus Entidades</h2>
+
+                    <div class="badge badge-error gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        class="inline-block h-4 w-4 stroke-current"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                      Código Proprietário
+                    </div>
+                  </div>
+                  <div>
+                    Sistema ERP para gestão de entidades de classe, com foco em
+                    associações comerciais, desenvolvido em Laravel (API), Vue
+                    (Frontend) e MySQL{" "}
+                    <a
+                      class="text-success hover:text-warning hover:underline active:text-secondary"
+                      href="https://www.univem.edu.br/"
+                    >
+                      UNIVEM
+                    </a>
+                    {"."}
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Footer */}
+            <div class="flex h-32 items-center justify-center pt-8 text-sm italic lg:col-start-1 lg:col-end-3 lg:row-start-4 lg:row-end-4">
+              © 2023 KuryArt
             </div>
           </div>
-
-          {/* Footer */}
-          {/* <div class="h-8 w-full"></div> */}
         </div>
       </BaseHtml>
     ));
