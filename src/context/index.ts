@@ -6,9 +6,7 @@ import { HoltLogger } from "@tlscipher/holt";
 import { bethStack } from "beth-stack/elysia";
 import { Elysia } from "elysia";
 import pretty from "pino-pretty";
-import { auth } from "../auth";
 import { config } from "../config";
-import { client, db } from "../db";
 
 const stream = pretty({
   colorize: true,
@@ -25,31 +23,13 @@ const loggerConfig =
 export const ctx = new Elysia({
   name: "@app/ctx",
 })
-  // .decorate("db", db)
   .decorate("config", config)
-  .decorate("auth", auth)
   .use(bethStack())
   .use(logger(loggerConfig))
   .use(
     // @ts-expect-error (beth-stack)
     config.env.NODE_ENV === "development"
       ? new HoltLogger().getLogger()
-      : (a) => a,
-  )
-  .use(
-    // @ts-expect-error (beth-stack)
-    config.env.DATABASE_CONNECTION_TYPE === "local-replica"
-      ? cron({
-          name: "heartbeat",
-          pattern: "*/2 * * * * *",
-          run() {
-            const now = performance.now();
-            console.log("Syncing database...");
-            void client.sync().then(() => {
-              console.log(`Database synced in ${performance.now() - now}ms`);
-            });
-          },
-        })
       : (a) => a,
   )
   .onStart(({ log }) => {

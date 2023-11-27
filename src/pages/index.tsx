@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/require-await */
-// import { Application, Assets, Sprite } from "pixi.js";
 import { Suspense } from "beth-stack/jsx";
 import { Elysia } from "elysia";
 import { BaseHtml } from "../components/base";
 import { IconButton } from "../components/buttons/icon-button";
 import { ThemeController } from "../components/buttons/theme-controller";
 import { ctx } from "../context";
-// import { importIcons } from "../utils/import-icons";
 
+// import { importIcons } from "../utils/import-icons";
 // importIcons();
 
 export const index = new Elysia()
@@ -40,16 +39,15 @@ export const index = new Elysia()
                 color="currentColor"
                 hoverColor="warning"
               />
-              <span class="ml-2 mr-8">
-                <IconButton
-                  href="https://github.com/kuryart"
-                  fontSize="text-5xl"
-                  iconSet="mdi"
-                  icon="github"
-                  color="currentColor"
-                  hoverColor="warning"
-                />
-              </span>
+              <IconButton
+                href="https://github.com/kuryart"
+                fontSize="text-5xl"
+                iconSet="mdi"
+                icon="github"
+                color="currentColor"
+                hoverColor="warning"
+                className="ml-2 mr-8"
+              />
 
               <ThemeController
                 theme="cupcake"

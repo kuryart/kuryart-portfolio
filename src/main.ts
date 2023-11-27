@@ -1,16 +1,11 @@
 import { staticPlugin } from "@elysiajs/static";
-// import { swagger } from "@elysiajs/swagger";
 import { Elysia } from "elysia";
 import { config } from "./config";
-import { ctx } from "./context";
-import { api } from "./controllers/*";
 import { pages } from "./pages/*";
 
 const app = new Elysia()
-  // .use(swagger())
   // @ts-expect-error (beth-stack)
   .use(staticPlugin())
-  .use(api)
   .use(pages)
   .onStart(({ log }) => {
     if (config.env.NODE_ENV === "development") {

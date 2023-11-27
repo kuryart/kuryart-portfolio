@@ -1,10 +1,11 @@
-export const IconButton = async ({
+export const IconButton = ({
   href,
   fontSize,
   iconSet,
   icon,
   color,
   hoverColor,
+  className,
 }: {
   href: string;
   fontSize: string;
@@ -12,10 +13,13 @@ export const IconButton = async ({
   icon: string;
   color: string;
   hoverColor: string;
-}) => (
-  <a
+  className?: string
+}) => {
+  className = className ? (" " + className) : "";
+
+  return <a
     href={href}
     aria-label={icon}
-    class={`${fontSize} icon--${iconSet} icon--${iconSet}--${icon} text-${color} hover:text-${hoverColor}`}
+    class={`${fontSize} icon--${iconSet} icon--${iconSet}--${icon} text-${color} hover:text-${hoverColor}${className}`}
   />
-);
+};
