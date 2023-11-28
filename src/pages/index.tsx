@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/require-await */
-import { Suspense } from "beth-stack/jsx";
+// import { Suspense } from "beth-stack/jsx";
 import { Elysia } from "elysia";
 import { BaseHtml } from "../components/base";
 import { IconButton } from "../components/buttons/icon-button";
@@ -26,14 +26,14 @@ export const index = new Elysia()
                 src="public/dist/images/kurya.png"
                 alt="kurya"
               />
-              <h1 class="text-2xl sm:text-4xl font-bold">Paulo Cury</h1>
-              <h2 class="ml-6 text-2xl text-warning">Software Developer</h2>
+              <h1 class="text-xl sm:text-4xl font-bold">Paulo Cury</h1>
+              <h2 class="ml-1 sm:ml-6 text-sm sm:text-2xl text-warning">Software Developer</h2>
             </div>
             {/* Right */}
             <div class="magictime slideUpReturn my-auto flex flex-row ">
               <IconButton
                 href="https://www.linkedin.com/in/paulo-cezar-cury-seara/"
-                fontSize="text-5xl"
+                fontSize="text-3xl sm:text-5xl"
                 iconSet="mdi"
                 icon="linkedin"
                 color="currentColor"
@@ -41,12 +41,12 @@ export const index = new Elysia()
               />
               <IconButton
                 href="https://github.com/kuryart"
-                fontSize="text-5xl"
+                fontSize="text-3xl sm:text-5xl"
                 iconSet="mdi"
                 icon="github"
                 color="currentColor"
                 hoverColor="warning"
-                className="ml-2 mr-8"
+                className="ml-2 mr-4 sm:mr-8"
               />
 
               <ThemeController
@@ -55,7 +55,7 @@ export const index = new Elysia()
                 lightIcon="sun-bold"
                 darkIconSet="ph"
                 darkIcon="moon-bold"
-                fontSize="text-2xl"
+                fontSize="text-xl sm:text-2xl"
                 color="currentColor"
                 hoverColor="warning"
               />
@@ -64,12 +64,12 @@ export const index = new Elysia()
 
           {/* Content */}
           {/* Grid */}
-          <div class="magictime slideDownReturn ml-8 mt-12 grid grid-flow-row auto-rows-[minmax(min-content,_max-content)] grid-cols-1 gap-8 lg:grid-cols-[repeat(2,_1fr)]">
+          <div class="magictime slideDownReturn ml-4 sm:ml-8 mt-12 grid grid-flow-row auto-rows-[minmax(min-content,_max-content)] grid-cols-1 gap-8 lg:grid-cols-[repeat(2,_1fr)]">
             {/* Col1 */}
             {/* Sobre Mim */}
-            <div class="flex flex-col gap-4 pr-12 lg:col-start-1 lg:col-end-1 lg:row-start-1 lg:row-end-1">
-              <h1 class="text-5xl font-bold">Sobre mim</h1>
-              <p class="py-6 text-justify indent-8">
+            <div class="flex flex-col gap-4 pr-4 sm:pr-12 lg:col-start-1 lg:col-end-1 lg:row-start-1 lg:row-end-1">
+              <h1 class="text-3xl sm:text-5xl font-bold">Sobre mim</h1>
+              <p class="py-2 indent-8 text-sm sm:py-6 sm:text-sm text-justify">
                 Sou um desenvolvedor fullstack com 11 anos de experiência em
                 programação e 5 anos de carreira. Durante esses anos, tive a
                 oportunidade de desenvolver projetos para Web, Desktop e Games,
@@ -88,10 +88,10 @@ export const index = new Elysia()
             {/* Col2 */}
             {/* Trajetória */}
             <div class="flex flex-col gap-4 lg:col-start-2 lg:col-end-2 lg:row-start-1 lg:row-end-4">
-              <h1 class="text-5xl font-bold">Minha trajetória</h1>
+              <h1 class="text-3xl sm:text-5xl font-bold">Minha trajetória</h1>
 
               {/* Timeline */}
-              <ul class="timeline timeline-vertical mt-6 pl-8 pr-12 xl:pr-24">
+              <ul class="timeline timeline-vertical mt-4 ml-4 sm:mt-6 sm:pl-8 sm:pr-12 xl:pr-24">
                 <li>
                   <div class="timeline-start mr-4 font-bold">1999</div>
                   <div class="timeline-middle">
@@ -465,9 +465,9 @@ export const index = new Elysia()
             {/* Col3 */}
             {/* Stacks */}
             <div class="flex flex-col gap-4 lg:col-start-1 lg:col-end-1 lg:row-start-2 lg:row-end-2">
-              <h1 class="mb-8 text-5xl font-bold">Stacks</h1>
+              <h1 class="mb-4 sm:mb-8 text-3xl sm:text-5xl font-bold">Stacks</h1>
 
-              <div class="mt-6 grid grid-cols-4 justify-items-center gap-y-10 pb-12 pr-8 xl:grid-cols-5">
+              <div class="mt-4 sm:mt-6 grid grid-cols-3 sm:grid-cols-4 justify-items-center gap-y-10 pb-12 pr-4 sm:pr-8 xl:grid-cols-5">
                 <div class="flex flex-col gap-2">
                   <span class="icon--skill-icons icon--skill-icons--javascript mx-auto text-5xl" />
                   <span class="text-center text-sm font-bold">Javascript</span>
@@ -588,11 +588,11 @@ export const index = new Elysia()
             {/* Col4 */}
             {/* Projetos */}
             <div class="flex flex-col gap-4 lg:col-start-1 lg:col-end-1 lg:row-start-3 lg:row-end-3">
-              <h1 class="mb-8 text-5xl font-bold">Projetos</h1>
+              <h1 class="mb-8 text-3xl sm:text-5xl font-bold">Projetos</h1>
               <ul class="pr-12">
                 <li class="mb-8 flex flex-col gap-2">
                   <a
-                    class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                    class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                     href="https://github.com/kuryart/portfolio"
                   >
                     Portfolio
@@ -618,9 +618,9 @@ export const index = new Elysia()
                   </span>
                 </li>
                 <li class="mb-8 flex flex-col gap-2">
-                  <div class="flex flex-row gap-2">
+                  <div class="flex flex-col md:flex-row lg:flex-col 2xl:flex-row gap-2">
                     <a
-                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                       href="https://github.com/kuryart/rust-nails-ryst"
                     >
                       RYST on Nails
@@ -671,9 +671,9 @@ export const index = new Elysia()
                   </div>
                 </li>
                 <li class="mb-8 flex flex-col gap-2">
-                  <div class="flex flex-row gap-2">
+                  <div class="flex flex-col md:flex-row lg:flex-col 2xl:flex-row gap-2">
                     <a
-                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                       href="https://github.com/kuryart/godot-inventory-system"
                     >
                       Godot Inventory System
@@ -705,7 +705,7 @@ export const index = new Elysia()
                 <li class="mb-8 flex flex-col gap-2">
                   <div class="flex flex-row justify-between">
                     <a
-                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                       href="https://github.com/kuryart/music-tools"
                     >
                       Music Tools
@@ -719,7 +719,7 @@ export const index = new Elysia()
                 </li>
                 <li class="mb-8 flex flex-col gap-2">
                   <a
-                    class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                    class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                     href="https://github.com/kuryart/usp-scrapper"
                   >
                     USP Scrapper
@@ -741,7 +741,7 @@ export const index = new Elysia()
                 <li class="mb-8 flex flex-col gap-2">
                   <div class="flex flex-row justify-between">
                     <a
-                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                       href="https://github.com/kuryart/cardapio-digital"
                     >
                       Cardápio Digital
@@ -755,7 +755,7 @@ export const index = new Elysia()
                 <li class="mb-8 flex flex-col gap-2">
                   <div class="flex flex-row justify-between">
                     <a
-                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                       href="https://github.com/kuryart/flaviohmonteiro"
                     >
                       Portfolio de Candidato a Vereador 1
@@ -766,17 +766,17 @@ export const index = new Elysia()
                 <li class="mb-8 flex flex-col gap-2">
                   <div class="flex flex-row justify-between">
                     <a
-                      class="text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
+                      class="text-xl sm:text-2xl font-bold text-success hover:text-warning hover:underline active:text-secondary"
                       href="https://github.com/kuryart/JaInox"
                     >
-                      Portfolio de Candidato a Vereador 2
+                      Portfólio de Candidato a Vereador 2
                     </a>
                   </div>
                   <div>Site de campanha política para vereador.</div>
                 </li>
                 <li class="mb-8 flex flex-col gap-2">
-                  <div class="flex flex-row gap-2">
-                    <h2 class="text-2xl font-bold">
+                  <div class="flex flex-col md:flex-row lg:flex-col 2xl:flex-row gap-2">
+                    <h2 class="text-xl sm:text-2xl font-bold">
                       Sistema de Gestão de Importação
                     </h2>
 
@@ -811,8 +811,8 @@ export const index = new Elysia()
                   </div>
                 </li>
                 <li class="mb-8 flex flex-col gap-2">
-                  <div class="flex flex-row gap-2">
-                    <h2 class="text-2xl font-bold">
+                  <div class="flex flex-col md:flex-row lg:flex-col 2xl:flex-row gap-2">
+                    <h2 class="text-xl sm:text-2xl font-bold">
                       Sistema de Gestão de Centro de Custos
                     </h2>
 
@@ -847,8 +847,8 @@ export const index = new Elysia()
                   </div>
                 </li>
                 <li class="mb-8 flex flex-col gap-2">
-                  <div class="flex flex-row gap-2">
-                    <h2 class="text-2xl font-bold">Focus Entidades</h2>
+                  <div class="flex flex-col md:flex-row lg:flex-col 2xl:flex-row gap-2">
+                    <h2 class="text-xl sm:text-2xl font-bold">Focus Entidades</h2>
 
                     <div class="badge badge-error gap-2">
                       <svg
@@ -870,12 +870,12 @@ export const index = new Elysia()
                   <div>
                     Sistema ERP para gestão de entidades de classe, com foco em
                     associações comerciais, desenvolvido em Laravel (API), Vue
-                    (Frontend) e MySQL{" "}
+                    (Frontend) e MySQL para a {" "}
                     <a
                       class="text-success hover:text-warning hover:underline active:text-secondary"
-                      href="https://www.univem.edu.br/"
+                      href="https://acim.org.br/"
                     >
-                      UNIVEM
+                      ACIM - Associação Comercial e de Inovação de Marília
                     </a>
                     {"."}
                   </div>
