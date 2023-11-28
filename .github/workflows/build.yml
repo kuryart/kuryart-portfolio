@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
 
     # strategy:
     #   matrix:
@@ -26,10 +27,10 @@ jobs:
       uses: oven-sh/setup-bun@v1.1.0    
 
     - name: Build
+      env: 
+        NODE_ENV: ${{ vars.NODE_ENV }}
+        LOG_LEVEL: ${{ vars.LOG_LEVEL }}    
       run: |
         bun install
         bun run gulp
         bun run src/main.ts
-      env: 
-        NODE_ENV: ${{ vars.NODE_ENV }}
-        LOG_LEVEL: ${{ vars.LOG_LEVEL }}
