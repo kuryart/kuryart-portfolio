@@ -30,3 +30,6 @@ jobs:
         bun install
         bun run gulp
         bun run src/main.ts
+      env: 
+        NODE_ENV: ${{ vars.NODE_ENV }}
+        LOG_LEVEL: ${{ vars.LOG_LEVEL }}
