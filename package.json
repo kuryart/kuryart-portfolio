@@ -9,6 +9,7 @@
     "maintained node versions"
   ],
   "scripts": {
+    "build": "bun build ./src/main.ts --outdir ./public/dist --minify --splitting --target bun",
     "dev": "concurrently \"bun run --hot src/main.ts\" \"bun run gulp:dev\" \"bun run liveReload\"",
     "format:check": "prettier --check .",
     "format": "prettier --write . --list-different",
@@ -64,10 +65,12 @@
     "@iconify/tools": "^3.0.6",
     "@t3-oss/env-core": "^0.6.1",
     "@tlscipher/holt": "1.1.0",
-    "beth-stack": "0.0.33",
+    "beth-stack": "0.0.34",
     "elysia": "0.7.4",
     "magic.css": "^1.4.8",
     "pino-pretty": "^10.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",    
     "zod": "^3.22.2"
   }
 }
