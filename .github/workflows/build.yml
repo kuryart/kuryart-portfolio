@@ -37,6 +37,8 @@ jobs:
         bun install
         bun run gulp
         bun run build
+        bun install --global gh-pages --save-dev
+        gh-pages -d public/dist
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4

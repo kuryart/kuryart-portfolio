@@ -8,6 +8,7 @@
     "supports es6-module",
     "maintained node versions"
   ],
+  "homepage": "https://kuryart.github.io/kuryart.github.io",
   "scripts": {
     "build": "bun build ./src/main.ts --outdir ./public/dist --minify --splitting --target bun",
     "dev": "concurrently \"bun run --hot src/main.ts\" \"bun run gulp:dev\" \"bun run liveReload\"",
@@ -67,10 +68,11 @@
     "@tlscipher/holt": "1.1.0",
     "beth-stack": "0.0.34",
     "elysia": "0.7.4",
+    "gh-pages": "^6.1.0",
     "magic.css": "^1.4.8",
     "pino-pretty": "^10.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",    
+    "react-dom": "^18.2.0",
     "zod": "^3.22.2"
   }
 }
