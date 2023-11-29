@@ -32,14 +32,15 @@ jobs:
     - name: Build
       env: 
         NODE_ENV: ${{ vars.NODE_ENV }}
-        LOG_LEVEL: ${{ vars.LOG_LEVEL }}    
+        LOG_LEVEL: ${{ vars.LOG_LEVEL }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       run: |
         bun install
         bun run gulp
         bun run build
-        bun install --global gh-pages --save-dev
-        gh-pages -d public/dist
-
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        bunx gh-pages -d public/dist -u "github-actions-bot <support+actions@github.com>"
+    
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
