@@ -7,13 +7,13 @@ const app = new Elysia()
   // @ts-expect-error (beth-stack)
   .use(staticPlugin())
   .use(pages)
-  .onStart(({ log }) => {
-    if (config.env.NODE_ENV === "development") {
-      void fetch("http://localhost:3001/restart");
-      // log.debug("🦊 Triggering Live Reload");
-      console.log("🦊 Triggering Live Reload");
-    }
-  })
+  // .onStart(({ log }) => {
+  //   if (config.env.NODE_ENV === "development") {
+  //     void fetch("http://localhost:3001/restart");
+  //     // log.debug("🦊 Triggering Live Reload");
+  //     console.log("🦊 Triggering Live Reload");
+  //   }
+  // })
   .onError(({ code, error, request, log }) => {
     // log.error(` ${request.method} ${request.url}`, code, error);
     console.error(error);

@@ -24,12 +24,12 @@ function css() {
     .pipe(postcss(plugins))
     .pipe(cleanCSS())
     .pipe(rename("style.css"))
-    .pipe(gulp.dest("./public/dist/"))
+    .pipe(gulp.dest("./build/"))
     .pipe(gulp.src("./src/assets/**/*.*"))
-    .pipe(gulp.dest("./public/dist/"))
+    .pipe(gulp.dest("./build/"))
 }
 
-exports.build = function () {
+exports.build = async function () {
   return css();
 };
 exports.dev = function () {

@@ -11,6 +11,14 @@ RUN su node -c "umask 0002 && npm install -g ${NODE_MODULES}" \
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
+# Install fly.io
+WORKDIR /scripts
+COPY flyio.sh .
+RUN chmod +x flyio.sh \
+    && ./flyio.sh
+CMD export FLYCTL_INSTALL="/home/node/.fly"
+CMD export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
