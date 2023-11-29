@@ -25,7 +25,7 @@ function css() {
     .pipe(cleanCSS())
     .pipe(rename("style.css"))
     .pipe(gulp.dest("./public/dist/"))
-    .pipe(gulp.src(["./src/index.html", "./src/assets/**/*.*"]))
+    .pipe(gulp.src("./src/assets/**/*.*"))
     .pipe(gulp.dest("./public/dist/"))
 }
 
