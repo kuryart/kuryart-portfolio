@@ -24,7 +24,9 @@ function css() {
     .pipe(postcss(plugins))
     .pipe(cleanCSS())
     .pipe(rename("style.css"))
-    .pipe(gulp.dest("./public/dist/"));
+    .pipe(gulp.dest("./public/dist/"))
+    .pipe(gulp.src(["./src/index.html", "./src/assets/**/*.*"]))
+    .pipe(gulp.dest("./public/dist/"))
 }
 
 exports.build = function () {
