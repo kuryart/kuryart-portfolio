@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for kuryart-portfolio2 on 2023-11-29T23:39:07Z
+# fly.toml app configuration file generated for kuryart-portfolio on 2023-11-30T00:50:40Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "kuryart-portfolio2"
+app = "kuryart-portfolio"
 primary_region = "gru"
 
 [build]

@@ -19,7 +19,7 @@ export const BaseHtml = ({ children }: PropsWithChildren) => (
         <script src="https://unpkg.com/htmx.org/dist/ext/response-targets.js"></script>
         <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="public/style.css" />
 
         {/* <script>{safeScript}</script> */}
       </head>

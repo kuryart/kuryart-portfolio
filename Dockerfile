@@ -36,7 +36,6 @@ RUN bun run build
 RUN rm -rf node_modules && \
     bun install --ci
 
-
 # Final stage for app image
 FROM base
 

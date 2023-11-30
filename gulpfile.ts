@@ -13,7 +13,7 @@ const postcssImport = require("postcss-import");
 const rename = require("gulp-rename");
 const cleanCSS = require("gulp-clean-css");
 
-function css() {
+async function css() {
   var plugins = [
     postcssImport(),
     tailwind("./tailwind.config.js"),
@@ -24,9 +24,9 @@ function css() {
     .pipe(postcss(plugins))
     .pipe(cleanCSS())
     .pipe(rename("style.css"))
-    .pipe(gulp.dest("./build/"))
+    .pipe(gulp.dest("./public/"))
     .pipe(gulp.src("./src/assets/**/*.*"))
-    .pipe(gulp.dest("./build/"))
+    .pipe(gulp.dest("./public/"))
 }
 
 exports.build = async function () {

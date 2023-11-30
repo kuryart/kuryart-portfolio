@@ -23,7 +23,7 @@ export const index = new Elysia()
             <div class="magictime slideLeftReturn flex flex-row flex-wrap items-center">
               <img
                 class="h-8 h-8 sm:h-16 sm:w-16"
-                src="images/kurya.png"
+                src="public/images/kurya.png"
                 alt="kurya"
               />
               <h1 class="text-xl sm:text-4xl font-bold">Paulo Cury</h1>

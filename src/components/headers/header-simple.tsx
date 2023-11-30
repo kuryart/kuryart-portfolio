@@ -9,7 +9,7 @@ export const HeaderSimple = async ({
   <div id="header" class="flex h-max w-full flex-row justify-between">
     {/* Left */}
     <div class="magictime slideLeftReturn flex flex-row flex-wrap items-center">
-      <img class="h-16 w-16" src="images/kurya.png" alt="kurya" />
+      <img class="h-16 w-16" src="public/images/kurya.png" alt="kurya" />
       <h1 class="text-4xl font-bold">Paulo Cury</h1>
       <h2 class="ml-6 text-2xl text-warning">Software Developer</h2>
     </div>

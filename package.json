@@ -10,7 +10,7 @@
   ],
   "homepage": "https://kuryart.github.io/kuryart.github.io",
   "scripts": {
-    "build": "bun run gulp && bun build ./src/main.ts --outdir ./build --minify --splitting --target bun",
+    "build": "bun run gulp && bun build ./src/main.ts --outdir ./public --minify --splitting --target bun",
     "dev": "concurrently \"bun run --hot src/main.ts\" \"bun run gulp:dev\" \"bun run liveReload\"",
     "format:check": "prettier --check .",
     "format": "prettier --write . --list-different",
@@ -19,7 +19,7 @@
     "lint:fix": "eslint . --report-unused-disable-directives --fix",
     "lint": "eslint . --report-unused-disable-directives",
     "liveReload": "bunx beth-stack",
-    "start": "bun run gulp && bun run build/main.js",
+    "start": "bun run gulp && bun run public/main.js",
     "typecheck": "bunx --bun tsc"
   },
   "devDependencies": {
