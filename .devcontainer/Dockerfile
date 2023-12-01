@@ -12,12 +12,17 @@ RUN su node -c "umask 0002 && npm install -g ${NODE_MODULES}" \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
 # Install fly.io
-WORKDIR /scripts
-COPY flyio.sh .
-RUN chmod +x flyio.sh \
-    && ./flyio.sh
-CMD export FLYCTL_INSTALL="/home/node/.fly"
-CMD export PATH="$FLYCTL_INSTALL/bin:$PATH"
+ENV FLYCTL_INSTALL="/home/node/.fly"
+ENV PATH="${FLYCTL_INSTALL}/bin:{$PATH}"
+
+RUN curl -L https://fly.io/install.sh | sh
+
+# WORKDIR /scripts
+# COPY flyio.sh .
+# RUN chmod +x flyio.sh \
+#     && ./flyio.sh
+# CMD export FLYCTL_INSTALL="/home/node/.fly"
+# CMD export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
